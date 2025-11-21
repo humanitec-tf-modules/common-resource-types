@@ -1,7 +1,7 @@
 
 resource "platform-orchestrator_resource_type" "score-workload" {
   for_each    = var.enable-score-workload ? toset(["this"]) : toset([])
-  id          = "score-workload"
+  id          = "${var.resource-type-prefix}score-workload"
   description = "A Score workload."
   output_schema = jsonencode({
     type = "object"
@@ -17,7 +17,7 @@ resource "platform-orchestrator_resource_type" "score-workload" {
 
 resource "platform-orchestrator_resource_type" "k8s-namespace" {
   for_each    = var.enable-k8s-namespace ? toset(["this"]) : toset([])
-  id          = "k8s-namespace"
+  id          = "${var.resource-type-prefix}k8s-namespace"
   description = "A Kubernetes namespace."
   output_schema = jsonencode({
     type     = "object"
@@ -34,7 +34,7 @@ resource "platform-orchestrator_resource_type" "k8s-namespace" {
 
 resource "platform-orchestrator_resource_type" "k8s-service-account" {
   for_each    = var.enable-k8s-service-account ? toset(["this"]) : toset([])
-  id          = "k8s-service-account"
+  id          = "${var.resource-type-prefix}k8s-service-account"
   description = "A Kubernetes service account."
   output_schema = jsonencode({
     type     = "object"

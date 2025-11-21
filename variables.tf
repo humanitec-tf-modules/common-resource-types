@@ -1,3 +1,8 @@
+variable "resource-type-prefix" {
+  type    = string
+  default = ""
+}
+
 variable "enable-score-workload" {
   type    = bool
   default = false

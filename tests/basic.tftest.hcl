@@ -30,17 +30,17 @@ run "full" {
   }
 
   assert {
-    condition     = lookup(lookup(platform-orchestrator_resource_type.score-workload, "this", {}), "id", null) != null
+    condition     = lookup(lookup(platform-orchestrator_resource_type.score-workload, "this", {}), "id", null) == "score-workload"
     error_message = "score-workload should be set"
   }
 
   assert {
-    condition     = lookup(lookup(platform-orchestrator_resource_type.k8s-namespace, "this", {}), "id", null) != null
+    condition     = lookup(lookup(platform-orchestrator_resource_type.k8s-namespace, "this", {}), "id", null) == "k8s-namespace"
     error_message = "k8s-namespace should be set"
   }
 
   assert {
-    condition     = lookup(lookup(platform-orchestrator_resource_type.k8s-service-account, "this", {}), "id", null) != null
+    condition     = lookup(lookup(platform-orchestrator_resource_type.k8s-service-account, "this", {}), "id", null) == "k8s-service-account"
     error_message = "k8s-service-account should be set"
   }
 
