@@ -1,3 +1,6 @@
+mock_provider "platform-orchestrator" {
+}
+
 run "empty" {
   command = plan
 
