@@ -1,9 +1,8 @@
-# TF version and required providers go here
 terraform {
-  # Defining a required TF version is recommended
-  # required_version = ">= 1.9.0"
-
   required_providers {
-    # ...
+    platform-orchestrator = {
+      source = "humanitec/platform-orchestrator"
+      version = "2.10.2"
+    }
   }
 }
