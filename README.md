@@ -21,7 +21,7 @@ In your IaC you use to configure your Platform Orchestrator, you can specify the
 
 ```terraform
 module "common_resource_types" {
-    source = "github.com/humanitec-tf-modules/common-resource-types?ref=vX.Y.Z"
+    source = "github.com/humanitec-tf-modules/common-resource-types"
 
     enable-score-workload = true
     enable-env = true
