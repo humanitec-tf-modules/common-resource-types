@@ -18,6 +18,11 @@ run "empty" {
     condition     = lookup(lookup(platform-orchestrator_resource_type.k8s-service-account, "this", {}), "id", null) == null
     error_message = "k8s-service-account should not be set"
   }
+
+  assert {
+    condition     = lookup(lookup(platform-orchestrator_resource_type.env, "this", {}), "id", null) == null
+    error_message = "env should not be set"
+  }
 }
 
 run "full" {
@@ -27,6 +32,7 @@ run "full" {
     enable-score-workload      = true
     enable-k8s-namespace       = true
     enable-k8s-service-account = true
+    enable-env                 = true
   }
 
   assert {
@@ -42,6 +48,11 @@ run "full" {
   assert {
     condition     = lookup(lookup(platform-orchestrator_resource_type.k8s-service-account, "this", {}), "id", null) == "k8s-service-account"
     error_message = "k8s-service-account should be set"
+  }
+
+  assert {
+    condition     = lookup(lookup(platform-orchestrator_resource_type.env, "this", {}), "id", null) == "env"
+    error_message = "env should be set"
   }
 
 }

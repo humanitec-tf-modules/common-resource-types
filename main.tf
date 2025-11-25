@@ -52,3 +52,20 @@ resource "platform-orchestrator_resource_type" "k8s-service-account" {
   })
   is_developer_accessible = true
 }
+
+resource "platform-orchestrator_resource_type" "env" {
+  for_each    = var.enable-env ? toset(["this"]) : toset([])
+  id          = "${var.resource-type-prefix}env"
+  description = "A source of environment aware variables."
+  output_schema = jsonencode({
+    type     = "object"
+    required = ["values"]
+    properties = {
+      values = {
+        type        = "map"
+        description = "The map of environment variable keys to values."
+      }
+    }
+  })
+  is_developer_accessible = true
+}
