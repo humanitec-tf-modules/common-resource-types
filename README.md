@@ -50,6 +50,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [platform-orchestrator_resource_type.env](https://registry.terraform.io/providers/humanitec/platform-orchestrator/2.10.2/docs/resources/resource_type) | resource |
 | [platform-orchestrator_resource_type.k8s-namespace](https://registry.terraform.io/providers/humanitec/platform-orchestrator/2.10.2/docs/resources/resource_type) | resource |
 | [platform-orchestrator_resource_type.k8s-service-account](https://registry.terraform.io/providers/humanitec/platform-orchestrator/2.10.2/docs/resources/resource_type) | resource |
 | [platform-orchestrator_resource_type.score-workload](https://registry.terraform.io/providers/humanitec/platform-orchestrator/2.10.2/docs/resources/resource_type) | resource |
@@ -58,15 +59,17 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_enable-k8s-namespace"></a> [enable-k8s-namespace](#input\_enable-k8s-namespace) | Whether to install the k8s-namespace type | `bool` | `false` | no |
-| <a name="input_enable-k8s-service-account"></a> [enable-k8s-service-account](#input\_enable-k8s-service-account) | Whether to install the k8s-service-account type | `bool` | `false` | no |
-| <a name="input_enable-score-workload"></a> [enable-score-workload](#input\_enable-score-workload) | Whether to install the score-workload type | `bool` | `false` | no |
+| <a name="input_enable-env"></a> [enable-env](#input\_enable-env) | Whether to install the env resource type | `bool` | `false` | no |
+| <a name="input_enable-k8s-namespace"></a> [enable-k8s-namespace](#input\_enable-k8s-namespace) | Whether to install the k8s-namespace resource type | `bool` | `false` | no |
+| <a name="input_enable-k8s-service-account"></a> [enable-k8s-service-account](#input\_enable-k8s-service-account) | Whether to install the k8s-service-account resource type | `bool` | `false` | no |
+| <a name="input_enable-score-workload"></a> [enable-score-workload](#input\_enable-score-workload) | Whether to install the score-workload resource type | `bool` | `false` | no |
 | <a name="input_resource-type-prefix"></a> [resource-type-prefix](#input\_resource-type-prefix) | A prefix to add to the generated resource types | `string` | `""` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
+| <a name="output_env-type"></a> [env-type](#output\_env-type) | The id of the env resource type if enabled |
 | <a name="output_k8s-namespace-type"></a> [k8s-namespace-type](#output\_k8s-namespace-type) | The id of the k8s-namespace resource type if enabled |
 | <a name="output_k8s-service-account-type"></a> [k8s-service-account-type](#output\_k8s-service-account-type) | The id of the k8s-service-account resource type if enabled |
 | <a name="output_score-workload-type"></a> [score-workload-type](#output\_score-workload-type) | The id of the score-workload resource type if enabled |
