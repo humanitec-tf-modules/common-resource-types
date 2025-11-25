@@ -62,8 +62,11 @@ resource "platform-orchestrator_resource_type" "env" {
     required = ["values"]
     properties = {
       values = {
-        type        = "map"
+        type        = "object"
         description = "The map of environment variable keys to values."
+        additionalProperties = {
+          type = "string"
+        }
       }
     }
   })
