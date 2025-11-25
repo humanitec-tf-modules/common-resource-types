@@ -4,7 +4,7 @@ A reusable Terraform module for setting commonly used resource-types for the Hum
 
 ## Overview
 
-This module provides reusable confgiuration for installing standard resource types that you may see frequently in tutorials, demos, and reference implementations.
+This module provides reusable configuration for installing standard resource types that you may see frequently in tutorials, demos, and reference implementations.
 
 Currently, this supports the following resource types which can each be opted-in to by setting the appropriate `enable-xyz` flag (see the inputs section below):
 
